@@ -39,6 +39,8 @@ public class BillView extends javax.swing.JFrame {
         btnGenerateBill = new javax.swing.JButton();
         lblTotalAmount = new javax.swing.JLabel();
         lblTreatmentFee = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtReceipt = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,6 +60,10 @@ public class BillView extends javax.swing.JFrame {
             }
         });
 
+        txtReceipt.setColumns(20);
+        txtReceipt.setRows(5);
+        jScrollPane2.setViewportView(txtReceipt);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -65,8 +71,6 @@ public class BillView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(212, 212, 212)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnGenerateBill, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtConsultationFee, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtBillAppointmentNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(51, 51, 51)
@@ -75,37 +79,46 @@ public class BillView extends javax.swing.JFrame {
                     .addComponent(lblBillPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblBillTreatment, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblTotalAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtConsultationFee, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnGenerateBill, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTotalAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(188, 188, 188)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblTreatmentFee, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(302, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(87, 87, 87)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnLoadAppointment)
-                        .addGap(69, 69, 69))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                    .addComponent(lblTreatmentFee, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnLoadAppointment)
+                                .addGap(69, 69, 69))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtBillAppointmentNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(76, 76, 76)))
+                        .addComponent(lblBillPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(txtBillAppointmentNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(76, 76, 76)))
-                .addComponent(lblBillPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lblBillTreatment, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblBillTreatment, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46)
                         .addComponent(txtConsultationFee, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(63, 63, 63)
-                        .addComponent(btnGenerateBill)
-                        .addGap(32, 32, 32)
-                        .addComponent(lblTotalAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblTreatmentFee, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(183, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(63, 63, 63)
+                                .addComponent(btnGenerateBill)
+                                .addGap(32, 32, 32)
+                                .addComponent(lblTotalAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(48, 48, 48)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))))))
         );
 
         pack();
@@ -132,8 +145,7 @@ public class BillView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoadAppointmentActionPerformed
 
     private void btnGenerateBillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateBillActionPerformed
-        // TODO add your handling code here:
-          if (currentAppointment == null) {
+  if (currentAppointment == null) {
         JOptionPane.showMessageDialog(this, "Please load an appointment first.");
         return;
     }
@@ -159,16 +171,34 @@ public class BillView extends javax.swing.JFrame {
     if (result.startsWith("BILL_SAVED:")) {
 
         String[] parts = result.split(":");
+        String billId = parts[1];
         String treatmentFee = parts[2];
         String totalAmount = parts[3];
 
         lblTreatmentFee.setText("Treatment Fee: " + treatmentFee);
         lblTotalAmount.setText("Total Amount: " + totalAmount);
 
-        JOptionPane.showMessageDialog(this,
-                "Bill generated!\nTreatment Fee: " + treatmentFee
-                + "\nConsultation Fee: " + consultationFee
-                + "\nTotal: " + totalAmount);
+        StringBuilder receipt = new StringBuilder();
+        receipt.append("========================================\n");
+        receipt.append("       SUNRISE DENTAL CLINIC - RECEIPT\n");
+        receipt.append("========================================\n");
+        receipt.append("Bill ID:            ").append(billId).append("\n");
+        receipt.append("Appointment No:     ").append(currentAppointment.getAppointmentNumber()).append("\n");
+        receipt.append("Patient Name:       ").append(currentAppointment.getPatientName()).append("\n");
+        receipt.append("Dentist:            ").append(currentAppointment.getDentistName()).append("\n");
+        receipt.append("Treatment:          ").append(currentAppointment.getTreatmentType()).append("\n");
+        receipt.append("Date:               ").append(currentAppointment.getAppointmentDate()).append("\n");
+        receipt.append("Time:               ").append(currentAppointment.getAppointmentTime()).append("\n");
+        receipt.append("----------------------------------------\n");
+        receipt.append("Consultation Fee:   ").append(consultationFee).append("\n");
+        receipt.append("Treatment Fee:      ").append(treatmentFee).append("\n");
+        receipt.append("----------------------------------------\n");
+        receipt.append("TOTAL AMOUNT:       ").append(totalAmount).append("\n");
+        receipt.append("========================================\n");
+
+        txtReceipt.setText(receipt.toString());
+
+        JOptionPane.showMessageDialog(this, "Bill generated and saved successfully!");
 
     } else {
 
@@ -215,11 +245,13 @@ public class BillView extends javax.swing.JFrame {
     private javax.swing.JButton btnGenerateBill;
     private javax.swing.JButton btnLoadAppointment;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblBillPatientName;
     private javax.swing.JLabel lblBillTreatment;
     private javax.swing.JLabel lblTotalAmount;
     private javax.swing.JLabel lblTreatmentFee;
     private javax.swing.JTextField txtBillAppointmentNumber;
     private javax.swing.JTextField txtConsultationFee;
+    private javax.swing.JTextArea txtReceipt;
     // End of variables declaration//GEN-END:variables
 }
