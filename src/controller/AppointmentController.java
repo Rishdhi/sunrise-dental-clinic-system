@@ -71,4 +71,23 @@ public class AppointmentController {
         return "APPOINTMENT_SAVED:" + appointmentNumber;
     }
     
+    
+    public model.AppointmentDetails searchAppointment(String appointmentNumberStr) {
+
+    if (appointmentNumberStr == null || appointmentNumberStr.trim().isEmpty()) {
+        return null;
+    }
+
+    int appointmentNumber;
+
+    try {
+        appointmentNumber = Integer.parseInt(appointmentNumberStr.trim());
+    } catch (NumberFormatException e) {
+        return null;
+    }
+
+    return appointmentDAO.getAppointmentByNumber(appointmentNumber);
+}
+    
+    
 }

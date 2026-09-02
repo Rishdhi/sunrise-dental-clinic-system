@@ -27,7 +27,8 @@
               <EmptySpace min="118" pref="118" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
+                      <Component id="btnSearchAppointment" min="-2" pref="73" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                       <Component id="AppointmentNo" min="-2" pref="304" max="-2" attributes="0"/>
                   </Group>
                   <Component id="txtDate" min="-2" pref="79" max="-2" attributes="0"/>
@@ -62,8 +63,16 @@
               <Component id="txtTime" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="SaveButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              <Component id="AppointmentNo" min="-2" pref="50" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="AppointmentNo" min="-2" pref="50" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <Component id="btnSearchAppointment" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace pref="206" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -109,6 +118,14 @@
     <Component class="javax.swing.JLabel" name="AppointmentNo">
     </Component>
     <Component class="com.github.lgooddatepicker.components.TimePicker" name="txtTime">
+    </Component>
+    <Component class="javax.swing.JButton" name="btnSearchAppointment">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Search"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSearchAppointmentActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

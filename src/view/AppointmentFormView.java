@@ -69,6 +69,7 @@ public class AppointmentFormView extends javax.swing.JFrame {
         SaveButton = new javax.swing.JButton();
         AppointmentNo = new javax.swing.JLabel();
         txtTime = new com.github.lgooddatepicker.components.TimePicker();
+        btnSearchAppointment = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,6 +82,13 @@ public class AppointmentFormView extends javax.swing.JFrame {
             }
         });
 
+        btnSearchAppointment.setText("Search");
+        btnSearchAppointment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchAppointmentActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -89,7 +97,8 @@ public class AppointmentFormView extends javax.swing.JFrame {
                 .addGap(118, 118, 118)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
+                        .addComponent(btnSearchAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(78, 78, 78)
                         .addComponent(AppointmentNo, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbTreatment, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -120,8 +129,13 @@ public class AppointmentFormView extends javax.swing.JFrame {
                 .addComponent(txtTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(SaveButton)
-                .addGap(30, 30, 30)
-                .addComponent(AppointmentNo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(AppointmentNo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(btnSearchAppointment)))
                 .addContainerGap(206, Short.MAX_VALUE))
         );
 
@@ -171,6 +185,11 @@ String name = txtPatientName.getText().trim();
             JOptionPane.showMessageDialog(this, result);
         }    }//GEN-LAST:event_SaveButtonActionPerformed
 
+    private void btnSearchAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchAppointmentActionPerformed
+        // TODO add your handling code here:
+        new SearchAppointmentView().setVisible(true);
+    }//GEN-LAST:event_btnSearchAppointmentActionPerformed
+
     private void clearForm() {
     txtPatientName.setText("");
     txtAddress.setText("");
@@ -218,6 +237,7 @@ String name = txtPatientName.getText().trim();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AppointmentNo;
     private javax.swing.JButton SaveButton;
+    private javax.swing.JButton btnSearchAppointment;
     private javax.swing.JComboBox<Dentist> cmbDentist;
     private javax.swing.JComboBox<String> cmbTreatment;
     private javax.swing.JTextField txtAddress;
