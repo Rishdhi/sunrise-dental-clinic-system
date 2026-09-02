@@ -10,7 +10,7 @@ package model;
  */
 public class Dentist {
     
-     private int dentistId;
+    private int dentistId;
     private String name;
     private String specialization;
  
@@ -54,7 +54,7 @@ public class Dentist {
  
     @Override
     public String toString() {
-        return "Dentist{" + "dentistId=" + dentistId + ", name=" + name + '}';
+        return name;
     }
     
 }
