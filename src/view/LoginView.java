@@ -126,7 +126,11 @@ public class LoginView extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(
                 this,
                 "Welcome " + username
+                
         );
+        
+         new AppointmentFormView().setVisible(true);   // ← ADD THIS
+        this.dispose();                                 // ← ADD THIS
 
     } else {
 

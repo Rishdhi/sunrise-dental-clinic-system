@@ -72,8 +72,6 @@ public class AppointmentFormView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        cmbDentist.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         cmbTreatment.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         SaveButton.setText("Save Appointment");
@@ -220,7 +218,7 @@ String name = txtPatientName.getText().trim();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AppointmentNo;
     private javax.swing.JButton SaveButton;
-    private javax.swing.JComboBox<String> cmbDentist;
+    private javax.swing.JComboBox<Dentist> cmbDentist;
     private javax.swing.JComboBox<String> cmbTreatment;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtContact;
