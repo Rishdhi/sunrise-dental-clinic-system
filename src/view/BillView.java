@@ -19,7 +19,9 @@ public class BillView extends javax.swing.JFrame {
      */
     public BillView() {
         initComponents();
-        btnPrintReceipt.setEnabled(false);
+        btnPrintReceipt1.setEnabled(true);
+  
+        this.setSize(new java.awt.Dimension(1200, 850)); 
     }
     private AppointmentDetails currentAppointment; // add as a class field
     /**
@@ -42,116 +44,113 @@ public class BillView extends javax.swing.JFrame {
         lblTreatmentFee = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtReceipt = new javax.swing.JTextArea();
-        btnPrintReceipt = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        btnPrintReceipt1 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        txtBillAppointmentNumber.setFont(new java.awt.Font("Frank Ruhl Hofshi", 1, 14)); // NOI18N
+        getContentPane().add(txtBillAppointmentNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 253, 36));
+
+        jLabel1.setFont(new java.awt.Font("Eras Bold ITC", 0, 18)); // NOI18N
         jLabel1.setText("Enter Appointment Number");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 288, -1));
 
+        btnLoadAppointment.setFont(new java.awt.Font("Dubai", 1, 18)); // NOI18N
         btnLoadAppointment.setText("Load Appointment");
         btnLoadAppointment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoadAppointmentActionPerformed(evt);
             }
         });
+        getContentPane().add(btnLoadAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 120, 231, -1));
 
+        lblBillPatientName.setFont(new java.awt.Font("Dubai", 1, 18)); // NOI18N
+        getContentPane().add(lblBillPatientName, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, 247, 33));
+
+        lblBillTreatment.setFont(new java.awt.Font("Dubai", 1, 18)); // NOI18N
+        getContentPane().add(lblBillTreatment, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 210, 247, 33));
+        getContentPane().add(txtConsultationFee, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 253, 40));
+
+        btnGenerateBill.setFont(new java.awt.Font("Dubai", 1, 18)); // NOI18N
         btnGenerateBill.setText("Calculate and save bill");
         btnGenerateBill.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGenerateBillActionPerformed(evt);
             }
         });
+        getContentPane().add(btnGenerateBill, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 270, 231, -1));
+
+        lblTotalAmount.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
+        getContentPane().add(lblTotalAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(695, 243, -1, 33));
+        getContentPane().add(lblTreatmentFee, new org.netbeans.lib.awtextra.AbsoluteConstraints(2468, 87, 247, 33));
 
         txtReceipt.setColumns(20);
         txtReceipt.setRows(5);
         jScrollPane2.setViewportView(txtReceipt);
 
-        btnPrintReceipt.setText("Print receipt");
-        btnPrintReceipt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPrintReceiptActionPerformed(evt);
-            }
-        });
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 615, 297));
+
+        jLabel3.setFont(new java.awt.Font("Eras Bold ITC", 0, 18)); // NOI18N
+        jLabel3.setText("Enter consultation fee in LKR");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 288, -1));
+
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+
+        jLabel2.setFont(new java.awt.Font("Ebrima", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Sunrise Dental Clinic - Search Appointment");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1028, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel2)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(112, 112, 112)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtBillAppointmentNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51)
-                        .addComponent(btnLoadAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblBillPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblBillTreatment, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtConsultationFee, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnGenerateBill, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTotalAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(188, 188, 188)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblTreatmentFee, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnPrintReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblTreatmentFee, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnLoadAppointment)
-                                        .addGap(69, 69, 69))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel1)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtBillAppointmentNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(76, 76, 76)))
-                                .addComponent(lblBillPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(lblBillTreatment, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(46, 46, 46)
-                                .addComponent(txtConsultationFee, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(63, 63, 63)
-                                        .addComponent(btnGenerateBill)
-                                        .addGap(32, 32, 32)
-                                        .addComponent(lblTotalAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(48, 48, 48)
-                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnPrintReceipt)
-                .addContainerGap())
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, -1));
+
+        btnPrintReceipt1.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
+        btnPrintReceipt1.setText("Print receipt");
+        btnPrintReceipt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrintReceipt1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPrintReceipt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 430, 217, -1));
+
+        jButton1.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
+        jButton1.setText("Exit");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 680, -1, -1));
+
+        jButton2.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
+        jButton2.setText("Back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 680, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -236,12 +235,11 @@ public class BillView extends javax.swing.JFrame {
 
         JOptionPane.showMessageDialog(this, result);
     }
-    btnPrintReceipt.setEnabled(true);
     }//GEN-LAST:event_btnGenerateBillActionPerformed
 
-    private void btnPrintReceiptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintReceiptActionPerformed
+    private void btnPrintReceipt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintReceipt1ActionPerformed
         // TODO add your handling code here:
-        if (txtReceipt.getText().trim().isEmpty()) {
+         if (txtReceipt.getText().trim().isEmpty()) {
         JOptionPane.showMessageDialog(this, "No bill to print. Please generate a bill first.");
         return;
     }
@@ -256,7 +254,25 @@ public class BillView extends javax.swing.JFrame {
     } catch (java.awt.print.PrinterException e) {
         JOptionPane.showMessageDialog(this, "Printing failed: " + e.getMessage());
     }
-    }//GEN-LAST:event_btnPrintReceiptActionPerformed
+    }//GEN-LAST:event_btnPrintReceipt1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         int choice = JOptionPane.showConfirmDialog(
+            this,
+            "Are you sure you want to exit the system?",
+            "Confirm Exit",
+            JOptionPane.YES_NO_OPTION);
+
+    if (choice == JOptionPane.YES_OPTION) {
+        System.exit(0);
+    }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+         new SearchAppointmentView().setVisible(true);
+    this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,8 +312,12 @@ public class BillView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGenerateBill;
     private javax.swing.JButton btnLoadAppointment;
-    private javax.swing.JButton btnPrintReceipt;
+    private javax.swing.JButton btnPrintReceipt1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblBillPatientName;
