@@ -38,6 +38,7 @@ public class SearchAppointmentView extends javax.swing.JFrame {
         lblTreatment = new javax.swing.JLabel();
         lblDate = new javax.swing.JLabel();
         lblTime = new javax.swing.JLabel();
+        btnGoToBilling = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,6 +48,13 @@ public class SearchAppointmentView extends javax.swing.JFrame {
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
+            }
+        });
+
+        btnGoToBilling.setText("Go to Billing");
+        btnGoToBilling.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGoToBillingActionPerformed(evt);
             }
         });
 
@@ -68,7 +76,8 @@ public class SearchAppointmentView extends javax.swing.JFrame {
                     .addComponent(lblDentist, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTreatment, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblDate, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTime, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblTime, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGoToBilling, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(376, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -82,7 +91,9 @@ public class SearchAppointmentView extends javax.swing.JFrame {
                 .addComponent(lblPatientName, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnGoToBilling)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblContact, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblDentist, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -92,7 +103,7 @@ public class SearchAppointmentView extends javax.swing.JFrame {
                 .addComponent(lblDate, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblTime, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
 
         pack();
@@ -131,6 +142,11 @@ public class SearchAppointmentView extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_btnSearchActionPerformed
 
+    private void btnGoToBillingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGoToBillingActionPerformed
+        // TODO add your handling code here:
+        new BillView().setVisible(true);
+    }//GEN-LAST:event_btnGoToBillingActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -167,6 +183,7 @@ public class SearchAppointmentView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGoToBilling;
     private javax.swing.JButton btnSearch;
     private javax.swing.JLabel lblAddress;
     private javax.swing.JLabel lblContact;

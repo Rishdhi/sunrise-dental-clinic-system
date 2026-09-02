@@ -40,6 +40,7 @@
                   <Component id="lblTreatment" min="-2" pref="357" max="-2" attributes="0"/>
                   <Component id="lblDate" min="-2" pref="357" max="-2" attributes="0"/>
                   <Component id="lblTime" min="-2" pref="357" max="-2" attributes="0"/>
+                  <Component id="btnGoToBilling" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="376" max="32767" attributes="0"/>
           </Group>
@@ -57,7 +58,9 @@
               <Component id="lblPatientName" min="-2" pref="27" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="lblAddress" min="-2" pref="33" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="btnGoToBilling" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="lblContact" min="-2" pref="33" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="lblDentist" min="-2" pref="33" max="-2" attributes="0"/>
@@ -67,7 +70,7 @@
               <Component id="lblDate" min="-2" pref="33" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="lblTime" min="-2" pref="33" max="-2" attributes="0"/>
-              <EmptySpace pref="183" max="32767" attributes="0"/>
+              <EmptySpace pref="159" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -99,6 +102,14 @@
     <Component class="javax.swing.JLabel" name="lblDate">
     </Component>
     <Component class="javax.swing.JLabel" name="lblTime">
+    </Component>
+    <Component class="javax.swing.JButton" name="btnGoToBilling">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Go to Billing"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGoToBillingActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
