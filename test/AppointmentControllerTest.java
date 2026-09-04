@@ -21,7 +21,7 @@ public class AppointmentControllerTest {
     @Test
     public void testValidInput() {
         String result =
-                controller.validateInput("Peter", "Colombo", "0771234567", "2026-09-10", "10:00:00");
+                controller.validateInput("Peter", "Colombo", "0778334567", "2026-09-10", "10:00:00");
         assertEquals("VALID", result);
     }
 
@@ -69,8 +69,8 @@ public class AppointmentControllerTest {
     @Test
     public void testSaveAppointmentSuccess() {
         String result = controller.saveAppointment(
-                "Test Patient", "Test Address", "0770000000",
-                1, "Cleaning", "2026-09-15", "09:00:00");
+                "Test Patient 1", "Test Address 1", "0770000000",
+                1, "Cleaning", "2026-09-16", "09:00:00");
         assertTrue(result.startsWith("APPOINTMENT_SAVED:"));
     }
 
